@@ -113,11 +113,14 @@
 		$(function() {
 		   $("#pHide").hide();
 		});
-		/*
-		(function() {
-		   document.getElementById("pHide").style.display = 'none';
-
-		})();*/
+		
+		$('a[href^=#]').on('click', function(e){
+		    var href = $(this).attr('href');
+		    $('html, body').animate({
+		        scrollTop:$(href).offset().top
+		    },'slow');
+		    e.preventDefault();
+		});
 		  
 	</script>
 </html>
