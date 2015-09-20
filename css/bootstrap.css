@@ -2999,7 +2999,7 @@ select[multiple].input-lg {
   }
 }
 
-.top-pic {
+div.top-pic {
   width: 300px;
   height: 300px;
   border-radius: 150px;
