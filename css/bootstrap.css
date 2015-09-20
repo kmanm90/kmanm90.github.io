@@ -6802,17 +6802,3 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-
-.topicEven{
-  height:100vh; 
-  background-color:#F00;
-  border-radius: 15px;
-
-}
-
-topicEven{
-  height:100vh; 
-  background-color:#0F0;
-  border-radius: 15px;
-
-}
