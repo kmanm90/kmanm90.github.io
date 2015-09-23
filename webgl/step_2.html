@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>three.js webgl - trackball controls</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <style>
+            body {
+                color: #000;
+                font-family:Monospace;
+                font-size:13px;
+                text-align:center;
+                font-weight: bold;
+
+                background-color: #fff;
+                margin: 0px;
+                overflow: hidden;
+            }
+
+            #info {
+                color:#fff;
+                position: absolute;
+                top: 0px; width: 100%;
+                padding: 5px;
+
+            }
+
+            
+        </style>
+    </head>
+
+    <body>
+        <div id="container"></div>
+        <div id="info">
+            <a href="http://threejs.org" target="_blank">three.js</a> - trackball controls example</br>
+            MOVE mouse &amp; press LEFT/A: rotate, MIDDLE/S: zoom, RIGHT/D: pan
+        </div>
+
+        
+        <div style="width: 80px; background-color:#DDD; position: absolute; left: 100px; top: 0px;">
+            <p style="color:#F00">x: <span id="xInfo"> 100</span></p>
+            <p style="color:#0F0">y: <span id="yInfo"> 10</span></p>
+            <p style="color:#00F">z: <span id="zInfo"> 200</span></p>
+        </div>
+
+
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/three.min.js"></script>
+
+        <script src="js/TrackballControls.js"></script>
+
+        <script src="js/dat.gui.min.js"></script>
+        <script src="js/stats.min.js"></script>
+
+        <script src="js/logic_step2.js"></script>
+
+    </body>
+</html>
