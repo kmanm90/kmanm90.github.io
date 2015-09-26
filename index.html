@@ -12,7 +12,7 @@
 			<!--<div id="top-pic"></div>-->	
 			<div class="container" style="text-align: center; height:100vh;">
 				
-				<img class="img-circle " src="pic/top.png" style="box-shadow: 0px 0px 15px 2px #111;">
+				<img class="img-circle" src="pic/top.png" style="box-shadow: 0px 0px 15px 2px #111; width:100%;">
 			</div>		
 		</div>
 
@@ -224,6 +224,7 @@
 		   $("#pHide").hide();
 		});
 		
+		//href scroll function
 		$('a[href^=#]').on('click', function(e){
 		    var href = $(this).attr('href');
 		    $('html, body').animate({
@@ -231,6 +232,50 @@
 		    },'slow');
 		    e.preventDefault();
 		});
+
+		//start: if (div is visible) then...
+		$(CheckDivVisible); //call in starting position
+		$(window).scroll(CheckDivVisible); //call when scroll
+
+		function isDivVisible(elem) {
+		    var docViewTop = $(window).scrollTop();
+		    var docViewBottom = docViewTop + $(window).height();
+		    var elemTop = $(elem).offset().top;
+		    var elemBottom = elemTop + $(elem).height();
+		    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+		}
+
+		function CheckDivVisible() {
+
+		    if (isScrolledIntoView($("#heading1"))){
+		    	$("#heading1").css("color", "red");
+		    } 
+		    else {
+		    	$("#heading1").css("color", "black");
+		    }
+
+		    if (isScrolledIntoView($("#heading2"))){
+		    	$("#heading2").css("color", "red");
+		    } 
+		    else {
+		    	$("#heading2").css("color", "black");
+		    }
+
+		    if (isScrolledIntoView($("#heading3"))){
+		    	$("#heading3").css("color", "red");
+		    } 
+		    else {
+		    	$("#heading3").css("color", "black");
+		    }
+
+		    if (isScrolledIntoView($("#heading4"))){
+		    	$("#heading4").css("color", "red");
+		    } 
+		    else {
+		    	$("#heading4").css("color", "black");
+		    }
+		}
+		//end: if (div is visible) then...
 		  
 	</script>
 </html>
