@@ -120,4 +120,5 @@ function showPieChart() {
             }]
         }
     });
+    showPieChart = function(){};//only once callable
 }
