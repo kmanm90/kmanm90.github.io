@@ -1,4 +1,4 @@
-$(function () {
+function showPieChart() {
     // Create the chart
     $('#piechart1').highcharts({
         chart: {
@@ -120,4 +120,4 @@ $(function () {
             }]
         }
     });
-});
+}
