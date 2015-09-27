@@ -5,16 +5,16 @@ function showPieChart() {
             type: 'pie'
         },
         title: {
-            text: 'Browser market shares. January, 2015 to May, 2015'
+            text: 'Anzahl der weltweit produzierten Fahrzeuge. Im Verhältnis die fünf größten Hersteller (2011).'
         },
         subtitle: {
-            text: 'Click the slices to view versions. Source: netmarketshare.com.'
+            text: 'Anklicken für weitere Details. Quelle: oica.net'
         },
         plotOptions: {
             series: {
                 dataLabels: {
                     enabled: true,
-                    format: '{point.name}: {point.y:.1f}%'
+                    format: '{point.name}: {point.y}%'
                 }
             }
         },
@@ -24,7 +24,7 @@ function showPieChart() {
             pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
         },
         series: [{
-            name: "Brands",
+            name: "Fahrzeuge",
             colorByPoint: true,
             data: [{
                 name: "Microsoft Internet Explorer",

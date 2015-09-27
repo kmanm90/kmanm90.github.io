@@ -88,6 +88,7 @@
 			<div class="container" style="height:100vh;background-color:#DDD;border-radius: 15px;margin-bottom: 20px;">
 				<h1 id="heading2">Action</h1>
 				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
+				<p class="countUp" style="color:#0f0;">0</p> coffee
 				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>			
 				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.</p>
 				<p>test</p>
@@ -256,6 +257,7 @@
 
 		    if (isDivVisible($("#heading2"))){
 		    	$("#heading2").css("color", "red");
+		    	animateCounter();
 		    } 
 		    else {
 		    	$("#heading2").css("color", "black");
@@ -277,6 +279,16 @@
 		    }
 		}
 		//end: if (div is visible) then...
+
+		function animateCounter(){		  
+		    jQuery({someValue: 0}).animate({someValue: 4532}, {
+		        duration: 3500,
+		        easing:'swing', // can be anything
+		        step: function() { // called on every step
+		            // Update the element's text with rounded-up value:
+		            $('.countUp').text(Math.ceil(this.someValue));
+		        }
+	    });  
 		  
 	</script>
 </html>
