@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>kinematics browser examples</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <style>
+            body {
+                color: #000;                
+                font-size:14px;
+                text-align:center;
+                font-weight: bold;
+                background-color: #fff;
+                margin: 0px;
+                /*overflow: hidden;*/
+            }
+
+            #info {
+                color:#000;
+                position: absolute;
+                top: 0px; width: 100%;
+                padding: 5px;
+            }            
+        </style>
+    </head>
+
+    <body>
+
+        <div align="center" style="margin:10vh;">
+            <div id="container" X></div>
+        </div>
+
+        <div id="info">
+            <a href="http://kmanm90.github.io/kinematics">kman</a>: kinematics</br>
+            Kamerabewegung mit Maus
+        </div>
+
+        <!-- 50vh
+        <div style="width: 80px; background-color:#DDD; position: absolute; left: 100px; top: 0px;">
+            <p style="color:#F00">x: <span id="xInfo"> 100</span></p>
+            <p style="color:#0F0">y: <span id="yInfo"> 10</span></p>
+            <p style="color:#00F">z: <span id="zInfo"> 200</span></p>
+        </div> -->
+
+        <div align="center" style="margin:10vh;">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+
+Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer</p>
+        </div>
+
+        <div id="load_home">
+            <p>klick mich für tutorial 1</p>
+        </div>
+        <div id="content">
+
+        </div>
+
+        <script src="lib/jquery-2.1.4.min.js"></script>
+        <script src="lib/three.min.js"></script>
+
+        <script src="lib/TrackballControls.js"></script>
+
+        <script src="lib/dat.gui.min.js"></script>
+        <script src="lib/stats.min.js"></script>
+
+        <script src="js/tutorial1.js"></script>
+
+        <script>
+        $(document).ready( function() {
+            $("#load_home").on("click", function() {
+                $("#content").load("tutorial1.html");
+            });
+        });
+        </script>
+
+    </body>
+</html>
