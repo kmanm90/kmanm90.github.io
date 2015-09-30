@@ -23,7 +23,6 @@
                 
 
                 // world
-
                 scene = new THREE.Scene();
                 var geometry = new THREE.BoxGeometry(6, 6, 6);
                 var material = new THREE.MeshLambertMaterial({color: 0xffffff, wireframe:true});
@@ -33,6 +32,10 @@
                 mesh.updateMatrix();
                 mesh.matrixAutoUpdate = false;
                 scene.add( mesh);
+
+                var geometryPlane = new THREE.PlaneGeometry( 50, 50, 1,1 );
+                var materialPlane = new THREE.MeshBasicMaterial( {color: 0xffff00} ); //, side: THREE.DoubleSide
+                var plane = new THREE.Mesh( geometryPlane, materialPlane );
 
 
                 light = new THREE.AmbientLight( 0x000000 );
