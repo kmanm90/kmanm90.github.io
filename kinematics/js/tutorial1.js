@@ -29,7 +29,7 @@
                 // world
                 //scene = new THREE.Scene();
                 var geometry = new THREE.BoxGeometry(2, 2, 2);
-                var material = new THREE.MeshLambertMaterial({color: 0x999999, wireframe:false});
+                var material = new THREE.MeshLambertMaterial({color: 0xffffff, wireframe:false});
                 
                 mesh = new THREE.Mesh( geometry, material );
                 mesh.name='cube';
@@ -53,7 +53,7 @@
 
                 // add spotlight for the shadows
                 var spotLight = new THREE.SpotLight(0xffffff);
-                spotLight.position.set(10, 20, 20);
+                spotLight.position.set(0, 30, 0);
                 spotLight.shadowCameraNear = 20;
                 spotLight.shadowCameraFar = 50;
                 spotLight.castShadow = true;
@@ -68,7 +68,7 @@
                     this.speed = 1;
                     this.x = 0;
                     this.z = 0;
-                    this.wireframe = true;                    
+                    this.wireframe = false;                    
                     this.colorCube = material.color.getHex();
                     this.ApplyChange=function(){applyChange();
                     };
