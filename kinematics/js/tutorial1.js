@@ -228,10 +228,10 @@
         
         // Cursor up 
         if(keyCode == 38){             
-            mesh.translateX(step);                       
+            mesh.translateX(-step);                       
         // Cursor down 
         } else if(keyCode == 40){                  
-            mesh.translateX(-step);            
+            mesh.translateX(step);            
         // Cursor left 
         } else if(keyCode == 37){              
             mesh.translateZ(step);            
