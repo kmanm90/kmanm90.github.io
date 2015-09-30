@@ -36,9 +36,10 @@
                 var geometryPlane = new THREE.PlaneGeometry( 50, 50, 1,1 );
                 var materialPlane = new THREE.MeshBasicMaterial( {color: 0xffff00} ); //, side: THREE.DoubleSide
                 var plane = new THREE.Mesh( geometryPlane, materialPlane );
-                plane.position.set(0,0,0);                
-                //plane.rotation.x = 
 
+                plane.position.set(0,0,0);                
+                plane.rotation.z += Math.PI/2;
+                mesh.matrixAutoUpdate = false;
                 scene.add( plane);
 
 
