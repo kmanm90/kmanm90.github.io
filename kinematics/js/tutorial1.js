@@ -197,7 +197,7 @@
                 f1.add(controlObject, 'speed', 1, 5);
                 f1.add(controlObject, 'x', 0, 100).listen();
                 f1.add(controlObject, 'z', 0, 100).listen();
-                
+                f1.open();
 
                 var f2 = gui.addFolder('Objects');
                 f2.add(controlObject, 'wireframe');                
@@ -243,7 +243,7 @@
             camera.lookAt(scene.position);
         }
 
-        mesh.updateMatrix();
+        render();
         GUIcontrol.x = mesh.position.x;
         GUIcontrol.z = mesh.position.z;
         
