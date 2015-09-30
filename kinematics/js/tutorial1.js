@@ -1,9 +1,6 @@
 //tutorial 1 code
 
-            /*
-            *
-            *
-            */          
+                    
             var container;
             var stats;
             var camera;
@@ -12,14 +9,14 @@
             var renderer;
             var GUIcontrol;
             var cross;
-            var meshGroup;
+            var mesh;
 
             init();
             animate();
 
             function init() {
 
-                camera = new THREE.PerspectiveCamera( 90, (window.innerWidth/2) / (window.innerHeight/2), 1, 1000 );
+                camera = new THREE.PerspectiveCamera( 90, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
                 camera.position.z = 100;
 
@@ -28,34 +25,15 @@
                 // world
 
                 scene = new THREE.Scene();
-                //scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
-
-                var geometry = new THREE.BoxGeometry(6, 6, 6);//new THREE.CylinderGeometry( 0, 10, 30, 4, 1 );
+                var geometry = new THREE.BoxGeometry(6, 6, 6);
                 var material = new THREE.MeshLambertMaterial({color: 0xff0000, transparent:true, opacity:0.6, wireframe:true});
-                //new THREE.MeshPhongMaterial( { color:0xA1A1A1, shading: THREE.FlatShading } );
-                meshGroup = [];
-                for ( var i = 0; i < 10; i ++ ) {
+                
+                mesh = new THREE.Mesh( geometry, material );
+                mesh.position.set(0,0,0);
+                mesh.updateMatrix();
+                mesh.matrixAutoUpdate = false;
+                scene.add( mesh);
 
-                    meshGroup[i] = new THREE.Mesh( geometry, material );
-                    meshGroup[i].position.x = ( Math.random() - 0.5 ) * 100;
-                    meshGroup[i].position.y = ( Math.random() - 0.5 ) * 100;
-                    meshGroup[i].position.z = ( Math.random() - 0.5 ) * 100;
-                    meshGroup[i].updateMatrix();
-                    meshGroup[i].matrixAutoUpdate = false;
-                    scene.add( meshGroup[i] );
-
-                }
-
-
-                // lights
-
-                //light = new THREE.DirectionalLight( 0xffffff );
-                //light.position.set( 1, 1, 1 );
-                //scene.add( light );
-
-                //light = new THREE.DirectionalLight( 0x002288 );
-                //light.position.set( -1, -1, -1 );
-                //scene.add( light );
 
                 light = new THREE.AmbientLight( 0xffffff );
                 scene.add( light );
@@ -84,7 +62,8 @@
 
 
                 // renderer
-                renderer = new THREE.WebGLRenderer( { antialias: false } );
+                renderer = new THREE.WebGLRenderer( {alpha: true, antialias: false } );
+                renderer.setClearColor( 0x000000, 0 ); // the default
                 //renderer.setClearColor( scene.fog.color );
                 renderer.setPixelRatio( window.devicePixelRatio );
                 //renderer.setSize( window.innerWidth, window.innerHeight );
@@ -203,10 +182,10 @@
             }
 
             function applyChange(){
-                for (var i = meshGroup.length - 1; i >= 0; i--) {
-                    meshGroup[i].material.color = new THREE.Color(GUIcontrol.colorCube);
-                    meshGroup[i].material.wireframe = GUIcontrol.wireframe;
-                    meshGroup[i].material.opacity = GUIcontrol.opacity;
-                };
+                
+                mesh.material.color = new THREE.Color(GUIcontrol.colorCube);
+                mesh.material.wireframe = GUIcontrol.wireframe;
+                mesh.material.opacity = GUIcontrol.opacity;
+                
                 render();
             }
