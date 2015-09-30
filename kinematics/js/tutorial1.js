@@ -38,7 +38,7 @@
                 var plane = new THREE.Mesh( geometryPlane, materialPlane );
 
                 plane.position.set(0,0,0);                
-                plane.rotation.z = 1;// Math.PI/2;
+                plane.rotation.set(0,0,Math.PI/2,'XYZ')// Math.PI/2;
                 plane.updateMatrix();
                 plane.matrixAutoUpdate = false;                
                 scene.add( plane);
@@ -65,11 +65,6 @@
                 addControlGui(GUIcontrol);
 
 
-
-
-
-
-
                 // renderer
                 renderer = new THREE.WebGLRenderer( {alpha: true, antialias: false } );
                 renderer.setClearColor( 0x000000, 0 ); // the default
@@ -82,7 +77,7 @@
                 container.appendChild( renderer.domElement );
 
                 addStatsObject();
-                addCoords(10);                
+                addCoords(5);                
 
                 window.addEventListener( 'resize', onWindowResize, false );  
 
@@ -94,7 +89,7 @@
                 controls.panSpeed = 0.8;
 
                 controls.noZoom = false;
-                controls.noPan = false;
+                controls.noPan = true;
 
                 controls.staticMoving = true;
                 controls.dynamicDampingFactor = 0.3;
