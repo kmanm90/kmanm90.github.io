@@ -18,7 +18,7 @@
 
                 camera = new THREE.PerspectiveCamera( 90, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.set(20,20,0);
+                camera.position.set(-20,20,0);
 
                 
 
@@ -228,16 +228,16 @@
         
         // Cursor up 
         if(keyCode == 38){             
-            mesh.translateX(-step);                       
+            mesh.translateX(step);                       
         // Cursor down 
         } else if(keyCode == 40){                  
-            mesh.translateX(step);            
+            mesh.translateX(-step);            
         // Cursor left 
         } else if(keyCode == 37){              
-            mesh.translateZ(-step);            
+            mesh.translateZ(step);            
         // Cursor right 
         } else if(keyCode == 39){              
-            mesh.translateZ(step); 
+            mesh.translateZ(-step); 
         // space 
         } else if(keyCode == 32){
             camera.lookAt(scene.position);
