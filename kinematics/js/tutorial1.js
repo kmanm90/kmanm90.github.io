@@ -18,7 +18,7 @@
 
                 camera = new THREE.PerspectiveCamera( 90, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.set(-20,20,-20);
+                camera.position.set(20,20,0);
 
                 
 
