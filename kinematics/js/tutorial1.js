@@ -38,20 +38,20 @@
                 var plane = new THREE.Mesh( geometryPlane, materialPlane );
 
                 plane.position.set(0,0,0);                
-                plane.rotation.set(0,0,Math.PI/2,'XYZ')// Math.PI/2;
+                plane.rotation.set(0,0,(Math.PI/2.0),'XYZ')// Math.PI/2;
                 plane.updateMatrix();
                 plane.matrixAutoUpdate = false;                
                 scene.add( plane);
 
 
-                light = new THREE.AmbientLight( 0x000000 );
+                light = new THREE.AmbientLight( 0xffffff );
                 scene.add( light );
 
 
 
 
                 // setup the control object for the control gui
-                GUIcontrol = new function() {
+                GUIcontrol = new function() {                    
                     this.speed = 1;
                     this.x = 0;
                     this.z = 0;
@@ -123,6 +123,9 @@
                 requestAnimationFrame( animate );
                 stats.update();
                 controls.update();
+                GUIcontrol.x = Math.random();
+                GUIcontrol.z = Math.random();
+
 
             }
 
@@ -175,8 +178,8 @@
                 var gui = new dat.GUI();
                 var f1 = gui.addFolder('Bewegung');
                 f1.add(controlObject, 'speed', 1, 5);
-                f1.add(controlObject, 'x', 1);
-                f1.add(controlObject, 'z', 1);
+                f1.add(controlObject, 'x', 0, 100).listen();
+                f1.add(controlObject, 'z', 0, 100).listen();
                 
 
                 var f2 = gui.addFolder('Objects');
