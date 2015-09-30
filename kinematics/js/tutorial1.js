@@ -29,7 +29,7 @@
                 // world
                 //scene = new THREE.Scene();
                 var geometry = new THREE.BoxGeometry(2, 2, 2);
-                var material = new THREE.MeshLambertMaterial({color: 0xffffff, wireframe:false});
+                var material = new THREE.MeshLambertMaterial({color: 0xff0000, wireframe:false});
                 
                 mesh = new THREE.Mesh( geometry, material );
                 mesh.name='cube';
