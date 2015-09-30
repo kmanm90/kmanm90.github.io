@@ -38,7 +38,7 @@
                 var plane = new THREE.Mesh( geometryPlane, materialPlane );
 
                 plane.position.set(0,0,0);                
-                plane.rotation.z = Math.PI/2;
+                plane.rotation.z = 1;// Math.PI/2;
                 plane.updateMatrix();
                 plane.matrixAutoUpdate = false;                
                 scene.add( plane);
@@ -52,10 +52,10 @@
 
                 // setup the control object for the control gui
                 GUIcontrol = new function() {
-                    this.moveIncrement = 1;
-                    this.wireframe = true;
-                    this.opacity = 0.8;
-                    //this.bottomColor = planeMaterial.color.getHex();
+                    this.speed = 1;
+                    this.x = 0;
+                    this.z = 0;
+                    this.wireframe = true;                    
                     this.colorCube = material.color.getHex();
                     this.ApplyChange=function(){applyChange();
                     };
@@ -178,23 +178,27 @@
             */
             function addControlGui(controlObject) {
                 var gui = new dat.GUI();
-                var f1 = gui.addFolder('Scene');
-                f1.add(controlObject, 'moveIncrement', 0.1, 4);
+                var f1 = gui.addFolder('Bewegung');
+                f1.add(controlObject, 'speed', 1, 5);
+                f1.add(controlObject, 'x', 1);
+                f1.add(controlObject, 'z', 1);
                 
 
                 var f2 = gui.addFolder('Objects');
-                f2.add(controlObject, 'wireframe');
-                f2.add(controlObject, 'opacity', 0.1, 1);
+                f2.add(controlObject, 'wireframe');                
                 f2.addColor(controlObject, 'colorCube');
 
                 gui.add(controlObject, "ApplyChange");
             }
 
+
+
+
+
             function applyChange(){
                 
                 mesh.material.color = new THREE.Color(GUIcontrol.colorCube);
-                mesh.material.wireframe = GUIcontrol.wireframe;
-                mesh.material.opacity = GUIcontrol.opacity;
+                mesh.material.wireframe = GUIcontrol.wireframe;               
                 
                 render();
             }
