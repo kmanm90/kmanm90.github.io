@@ -27,14 +27,16 @@
 
     <body>
 
-        <div align="center" style="margin:10vh;">
-            <div id="container" X></div>
-        </div>
-
         <div id="info">
             <a href="http://kmanm90.github.io/kinematics">kman</a>: kinematics</br>
             Kamerabewegung mit Maus
         </div>
+
+        <div align="center" style="margin:10vh;">
+            <div id="webgl"></div>
+        </div>
+
+        
 
         <!-- 50vh
         <div style="width: 80px; background-color:#DDD; position: absolute; left: 100px; top: 0px;">
@@ -44,13 +46,16 @@
         </div> -->
 
         <div align="center" style="margin:10vh;">
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
-
-Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer</p>
+            <div style="background-color:#DDD;">
+                <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.  
+                </p>
+                <p>
+                    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+                    Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer
+                </p>
+            </div>
         </div>
 
         <div id="load_home">
@@ -62,6 +67,10 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
         <div id="content">
 
         </div>
+        <div class="nav">
+            <button id="btnTut1">Tutorial 1</button>
+            <button id="btnStart">Start</button>
+        </div>
 
         <script src="lib/jquery-2.1.4.min.js"></script>
         <script src="lib/three.min.js"></script>
@@ -71,20 +80,25 @@ Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming 
         <script src="lib/dat.gui.min.js"></script>
         <script src="lib/stats.min.js"></script>
 
-        <script src="js/tutorial1.js"></script>
+        <!--<script src="js/tutorial1.js"></script>-->
 
         <script>
         $(document).ready( function() {
-            $("#load_home").on("click", function() {
+            $("#btnTut1").on("click", function() {
                 $("#content").load("tutorial1.html");
+                $.getScript("js/tutorial1.js");
             });
 
-            $("#delete_home").on("click", function() {
-                $("#content").html("");
+            $("#btnStart").on("click", function() {
+                clearContent();
             });
 
             
         });
+        function clearContent(){
+            $("#content").html("");
+            $("#webgl").html("");
+        }
         </script>
 
     </body>
