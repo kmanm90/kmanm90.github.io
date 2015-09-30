@@ -18,7 +18,7 @@
 
                 camera = new THREE.PerspectiveCamera( 90, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.set(20,20,18);
+                camera.position.set(-20,20,-20);
 
                 
 
@@ -222,6 +222,7 @@
       * This function is called, when a key is pushed down.
      */ 
     function onDocumentKeyDown(event){ 
+        event.preventDefault();
         // Get the key code of the pressed key 
         var keyCode = event.which; 
         var step = GUIcontrol.speed;
