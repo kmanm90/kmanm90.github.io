@@ -18,7 +18,7 @@
                 scene = new THREE.Scene();
                 camera = new THREE.PerspectiveCamera( 75, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.set(-20,20,0);  
+                camera.position.set(-20,30,0);  
                 camera.lookAt(scene.position);              
                 //camera.rotation.y = Math.PI;
                 //camera.rotation.y = Math.PI;      // Y first
@@ -28,13 +28,13 @@
 
                 // world
                 //scene = new THREE.Scene();
-                var geometry = new THREE.BoxGeometry(6, 6, 6);
+                var geometry = new THREE.BoxGeometry(2, 2, 2);
                 var material = new THREE.MeshLambertMaterial({color: 0x999999, wireframe:false});
                 
                 mesh = new THREE.Mesh( geometry, material );
                 mesh.name='cube';
                 mesh.castShadow = true;
-                mesh.position.set(0,3,0);
+                mesh.position.set(0,1,0);
                 //mesh.updateMatrix();
                 //mesh.geometry.dynamic = true;
                 //mesh.matrixAutoUpdate = false;
