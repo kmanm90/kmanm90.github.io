@@ -37,7 +37,7 @@
                 var materialPlane = new THREE.MeshBasicMaterial( {color: 0xffff00} ); //, side: THREE.DoubleSide
                 var plane = new THREE.Mesh( geometryPlane, materialPlane );
                 plane.position.set(0,0,0);                
-                plane.applyEuler(new THREE.Euler( 45, 45, 0, 'XYZ' ));
+                //plane.rotation.x = 
 
                 scene.add( plane);
 
