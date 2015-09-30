@@ -223,7 +223,7 @@
     function onDocumentKeyDown(event){ 
         // Get the key code of the pressed key 
         var keyCode = event.which; 
-        var step = controlObject.speed;
+        var step = GUIcontrol.speed;
         
         // Cursor up 
         if(keyCode == 38){             
