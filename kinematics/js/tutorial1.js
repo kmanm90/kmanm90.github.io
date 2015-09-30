@@ -202,8 +202,7 @@
                 var f2 = gui.addFolder('Objects');
                 f2.add(controlObject, 'wireframe');                
                 f2.addColor(controlObject, 'colorCube');
-
-                gui.add(controlObject, "ApplyChange");
+                f2.add(controlObject, "ApplyChange");
             }
 
 
