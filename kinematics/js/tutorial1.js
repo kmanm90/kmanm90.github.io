@@ -18,25 +18,28 @@
 
                 camera = new THREE.PerspectiveCamera( 90, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.set(10,10,10);
+                camera.position.set(10,6,8);
 
                 
 
                 // world
                 scene = new THREE.Scene();
                 var geometry = new THREE.BoxGeometry(10, 10, 10);
-                var material = new THREE.MeshLambertMaterial({color: 0xffffff, wireframe:true});
+                var material = new THREE.MeshLambertMaterial({color: 0x999999, wireframe:true});
                 
                 mesh = new THREE.Mesh( geometry, material );
+                mesh.name='cube';
+                mesh.castShadow = true;
                 mesh.position.set(0,5,0);
                 mesh.updateMatrix();
                 mesh.matrixAutoUpdate = false;
                 scene.add( mesh);
 
                 var geometryPlane = new THREE.PlaneGeometry( 50, 50, 1,1 );
-                var materialPlane = new THREE.MeshBasicMaterial( {color: 0xffff00} ); //, side: THREE.DoubleSide
+                var materialPlane = new THREE.MeshBasicMaterial( {color: 0x3355AA} ); //, side: THREE.DoubleSide
                 var plane = new THREE.Mesh( geometryPlane, materialPlane );
-
+                plane.name='plane';
+                plane.receiveShadow = true;
                 plane.position.set(0,0,0);                
                 //plane.rotation.set(0,0,(Math.PI/2.0),'XYZ')// Math.PI/2;
                 plane.rotation.x = -0.5 * Math.PI;
@@ -45,8 +48,17 @@
                 scene.add( plane);
 
 
-                light = new THREE.AmbientLight( 0xffffff );
-                scene.add( light );
+                //light = new THREE.AmbientLight( 0xffffff );
+                //scene.add( light );
+
+                // add spotlight for the shadows
+                var spotLight = new THREE.SpotLight(0xffffff);
+                spotLight.position.set(10, 20, 20);
+                spotLight.shadowCameraNear = 20;
+                spotLight.shadowCameraFar = 50;
+                spotLight.castShadow = true;
+
+                scene.add(spotLight);
 
 
 
