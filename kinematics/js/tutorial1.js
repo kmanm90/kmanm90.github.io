@@ -18,7 +18,7 @@
 
                 camera = new THREE.PerspectiveCamera( 90, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.z = 100;
+                camera.position.z = 10;
 
                 
 
@@ -26,7 +26,7 @@
 
                 scene = new THREE.Scene();
                 var geometry = new THREE.BoxGeometry(6, 6, 6);
-                var material = new THREE.MeshLambertMaterial({color: 0xff0000, transparent:true, opacity:0.6, wireframe:true});
+                var material = new THREE.MeshLambertMaterial({color: 0xffffff, wireframe:true});
                 
                 mesh = new THREE.Mesh( geometry, material );
                 mesh.position.set(0,0,0);
@@ -35,7 +35,7 @@
                 scene.add( mesh);
 
 
-                light = new THREE.AmbientLight( 0xffffff );
+                light = new THREE.AmbientLight( 0x000000 );
                 scene.add( light );
 
 
