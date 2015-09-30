@@ -18,14 +18,14 @@
 
                 camera = new THREE.PerspectiveCamera( 90, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.set(10,6,8);
+                camera.position.set(20,20,18);
 
                 
 
                 // world
                 scene = new THREE.Scene();
                 var geometry = new THREE.BoxGeometry(10, 10, 10);
-                var material = new THREE.MeshLambertMaterial({color: 0x999999, wireframe:true});
+                var material = new THREE.MeshLambertMaterial({color: 0x999999, wireframe:false});
                 
                 mesh = new THREE.Mesh( geometry, material );
                 mesh.name='cube';
