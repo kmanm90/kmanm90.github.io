@@ -15,10 +15,11 @@
             animate();
 
             function init() {
-
+                scene = new THREE.Scene();
                 camera = new THREE.PerspectiveCamera( 75, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.set(10,20,0);
+                camera.position.set(-20,20,0);  
+                camera.lookAt(scene.position);              
                 //camera.rotation.y = Math.PI;
                 //camera.rotation.y = Math.PI;      // Y first
                 //camera.rotation.x = 0;     // X second
@@ -26,7 +27,7 @@
                 
 
                 // world
-                scene = new THREE.Scene();
+                //scene = new THREE.Scene();
                 var geometry = new THREE.BoxGeometry(6, 6, 6);
                 var material = new THREE.MeshLambertMaterial({color: 0x999999, wireframe:false});
                 
