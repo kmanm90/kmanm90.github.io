@@ -32,7 +32,8 @@
                 mesh.castShadow = true;
                 mesh.position.set(0,3,0);
                 mesh.updateMatrix();
-                mesh.matrixAutoUpdate = false;
+                //mesh.geometry.dynamic = true;
+                //mesh.matrixAutoUpdate = false;
                 scene.add( mesh);
 
                 var geometryPlane = new THREE.PlaneGeometry( 50, 50, 1,1 );
@@ -44,7 +45,7 @@
                 //plane.rotation.set(0,0,(Math.PI/2.0),'XYZ')// Math.PI/2;
                 plane.rotation.x = -0.5 * Math.PI;
                 plane.updateMatrix();
-                plane.matrixAutoUpdate = false;                
+                //plane.matrixAutoUpdate = false;                
                 scene.add( plane);
 
 
@@ -236,7 +237,7 @@
             mesh.translateZ(-step);            
         // Cursor right 
         } else if(keyCode == 39){              
-            mesh.translateX(step); 
+            mesh.translateZ(step); 
         // space 
         } else if(keyCode == 32){
             camera.lookAt(scene.position);
