@@ -39,7 +39,8 @@
 
                 plane.position.set(0,0,0);                
                 plane.rotation.z += Math.PI/2;
-                mesh.matrixAutoUpdate = false;
+                plane.matrixAutoUpdate = false;
+                plane.updateMatrix();
                 scene.add( plane);
 
 
