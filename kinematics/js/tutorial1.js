@@ -38,7 +38,8 @@
                 var plane = new THREE.Mesh( geometryPlane, materialPlane );
 
                 plane.position.set(0,0,0);                
-                plane.rotation.set(0,0,(Math.PI/2.0),'XYZ')// Math.PI/2;
+                //plane.rotation.set(0,0,(Math.PI/2.0),'XYZ')// Math.PI/2;
+                plane.rotation.x = -0.5 * Math.PI;
                 plane.updateMatrix();
                 plane.matrixAutoUpdate = false;                
                 scene.add( plane);
@@ -77,7 +78,7 @@
                 container.appendChild( renderer.domElement );
 
                 addStatsObject();
-                addCoords(5);                
+                addCoords(10);                
 
                 window.addEventListener( 'resize', onWindowResize, false );  
 
