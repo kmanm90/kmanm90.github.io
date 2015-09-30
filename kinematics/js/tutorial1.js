@@ -136,8 +136,8 @@
                 requestAnimationFrame( animate );
                 stats.update();
                 controls.update();
-                GUIcontrol.x = Math.random();
-                GUIcontrol.z = Math.random();
+                GUIcontrol.x = Math.random()*100;
+                GUIcontrol.z = Math.random()*100;
 
 
             }
