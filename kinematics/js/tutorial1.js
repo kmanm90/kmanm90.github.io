@@ -119,7 +119,7 @@
                 document.addEventListener("keydown", onDocumentKeyDown, false);   
 
                 //debug kamera
-                camera.position.set(0,30,0);  
+                camera.position.set(-1,30,0);  
                 camera.lookAt(scene.position);         
 
                 render();
@@ -171,9 +171,9 @@
             *
             */
             function addCoords(sizeCoords){                
-                var CoordsXArrow =  new THREE.ArrowHelper(new THREE.Vector3(1,0,0), new THREE.Vector3(0,0,0), sizeCoords, 0xFF0000);
-                var CoordsYArrow =  new THREE.ArrowHelper(new THREE.Vector3(0,1,0), new THREE.Vector3(0,0,0), sizeCoords, 0x00FF00);
-                var CoordsZArrow =  new THREE.ArrowHelper(new THREE.Vector3(0,0,1), new THREE.Vector3(0,0,0), sizeCoords, 0x0000FF);
+                var CoordsXArrow =  new THREE.ArrowHelper(new THREE.Vector3(10,1,0), new THREE.Vector3(0,1,0), sizeCoords, 0xFF0000);
+                var CoordsYArrow =  new THREE.ArrowHelper(new THREE.Vector3(0,10,0), new THREE.Vector3(0,1,0), sizeCoords, 0x00FF00);
+                var CoordsZArrow =  new THREE.ArrowHelper(new THREE.Vector3(0,1,10), new THREE.Vector3(0,1,0), sizeCoords, 0x0000FF);
 
                 scene.add(CoordsXArrow);
                 scene.add(CoordsYArrow);
