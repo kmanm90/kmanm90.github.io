@@ -18,13 +18,11 @@
 
                 camera = new THREE.PerspectiveCamera( 75, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.set(0,20,0);
+                camera.position.set(10,20,0);
                 //camera.rotation.y = Math.PI;
                 //camera.rotation.y = Math.PI;      // Y first
                 //camera.rotation.x = 0;     // X second
-                //camera.rotation.z = 0;
-                new THREE.Matrix4().makeRotationY( Math.PI / 4).multiplyVector3( camera.up );
-                camera.applyMatrix(camera.matrix.rotateY(Math.PI / 4));
+                //camera.rotation.z = 0;                
                 
 
                 // world
