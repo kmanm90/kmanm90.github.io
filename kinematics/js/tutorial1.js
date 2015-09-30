@@ -24,13 +24,13 @@
 
                 // world
                 scene = new THREE.Scene();
-                var geometry = new THREE.BoxGeometry(10, 10, 10);
+                var geometry = new THREE.BoxGeometry(6, 6, 6);
                 var material = new THREE.MeshLambertMaterial({color: 0x999999, wireframe:false});
                 
                 mesh = new THREE.Mesh( geometry, material );
                 mesh.name='cube';
                 mesh.castShadow = true;
-                mesh.position.set(0,5,0);
+                mesh.position.set(0,3,0);
                 mesh.updateMatrix();
                 mesh.matrixAutoUpdate = false;
                 scene.add( mesh);
@@ -90,7 +90,7 @@
                 container.appendChild( renderer.domElement );
 
                 addStatsObject();
-                addCoords(10);                
+                addCoords(8);                
 
                 window.addEventListener( 'resize', onWindowResize, false );  
 
