@@ -18,7 +18,7 @@
 
                 camera = new THREE.PerspectiveCamera( 90, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.z = 10;
+                camera.position.set(10,10,10);
 
                 
 
@@ -36,6 +36,10 @@
                 var geometryPlane = new THREE.PlaneGeometry( 50, 50, 1,1 );
                 var materialPlane = new THREE.MeshBasicMaterial( {color: 0xffff00} ); //, side: THREE.DoubleSide
                 var plane = new THREE.Mesh( geometryPlane, materialPlane );
+                plane.position.set(0,0,0);                
+                plane.applyEuler(new THREE.Euler( 45, 45, 0, 'XYZ' ));
+
+                scene.add( plane);
 
 
                 light = new THREE.AmbientLight( 0x000000 );
