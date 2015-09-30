@@ -116,7 +116,11 @@
                 controls.addEventListener( 'change', render );  
 
                 //add key listener
-                document.addEventListener("keydown", onDocumentKeyDown, false);            
+                document.addEventListener("keydown", onDocumentKeyDown, false);   
+
+                //debug kamera
+                camera.position.set(0,30,0);  
+                camera.lookAt(scene.position);         
 
                 render();
 
