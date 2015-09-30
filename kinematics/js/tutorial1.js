@@ -24,11 +24,11 @@
 
                 // world
                 scene = new THREE.Scene();
-                var geometry = new THREE.BoxGeometry(6, 6, 6);
+                var geometry = new THREE.BoxGeometry(10, 10, 10);
                 var material = new THREE.MeshLambertMaterial({color: 0xffffff, wireframe:true});
                 
                 mesh = new THREE.Mesh( geometry, material );
-                mesh.position.set(0,0,0);
+                mesh.position.set(0,5,0);
                 mesh.updateMatrix();
                 mesh.matrixAutoUpdate = false;
                 scene.add( mesh);
@@ -39,8 +39,8 @@
 
                 plane.position.set(0,0,0);                
                 plane.rotation.z = Math.PI/2;
-                plane.matrixAutoUpdate = false;
                 plane.updateMatrix();
+                plane.matrixAutoUpdate = false;                
                 scene.add( plane);
 
 
