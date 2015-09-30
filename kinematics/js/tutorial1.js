@@ -16,9 +16,9 @@
 
             function init() {
 
-                camera = new THREE.PerspectiveCamera( 90, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
+                camera = new THREE.PerspectiveCamera( 75, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.set(-20,20,0);
+                camera.position.set(0,20,0);
 
                 
 
@@ -31,7 +31,7 @@
                 mesh.name='cube';
                 mesh.castShadow = true;
                 mesh.position.set(0,3,0);
-                mesh.updateMatrix();
+                //mesh.updateMatrix();
                 //mesh.geometry.dynamic = true;
                 //mesh.matrixAutoUpdate = false;
                 scene.add( mesh);
@@ -42,15 +42,10 @@
                 plane.name='plane';
                 plane.receiveShadow = true;
                 plane.position.set(0,0,0);                
-                //plane.rotation.set(0,0,(Math.PI/2.0),'XYZ')// Math.PI/2;
+               
                 plane.rotation.x = -0.5 * Math.PI;
-                plane.updateMatrix();
-                //plane.matrixAutoUpdate = false;                
+                //plane.updateMatrix();                               
                 scene.add( plane);
-
-
-                //light = new THREE.AmbientLight( 0xffffff );
-                //scene.add( light );
 
                 // add spotlight for the shadows
                 var spotLight = new THREE.SpotLight(0xffffff);
@@ -228,16 +223,16 @@
         
         // Cursor up 
         if(keyCode == 38){             
-            mesh.translateX(-step);                       
+            mesh.translateX(step);                       
         // Cursor down 
         } else if(keyCode == 40){                  
-            mesh.translateX(step);            
+            mesh.translateX(-step);            
         // Cursor left 
         } else if(keyCode == 37){              
-            mesh.translateZ(step);            
+            mesh.translateZ(-step);            
         // Cursor right 
         } else if(keyCode == 39){              
-            mesh.translateZ(-step); 
+            mesh.translateZ(step); 
         // space 
         } else if(keyCode == 32){
             camera.lookAt(scene.position);
