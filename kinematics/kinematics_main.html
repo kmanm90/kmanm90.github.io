@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>kinematics browser examples</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <link href="/css/bootstrap.min.css" rel="stylesheet">               
+
         <style>
             body {
                 color: #000;                
-                font-size:14px;
-                text-align:center;
-                font-weight: bold;
-                background-color: #fff;
-                margin: 0px;
+                font-size:14px;                
+                background-color: #fff;                
                 /*overflow: hidden;*/
             }
 
@@ -21,7 +20,16 @@
                 position: absolute;
                 top: 0px; width: 100%;
                 padding: 5px;
-            }            
+            }     
+
+            .text{
+                background-color:#DDD; 
+                text-align: left; 
+                padding: 5px 10px; 
+                border-radius: 15px;
+            }
+
+
         </style>
     </head>
 
@@ -46,7 +54,7 @@
         </div> -->
 
         <div align="center" style="margin:10vh;">
-            <div style="background-color:#DDD;">
+            <div class="text">
                 <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.  
                 </p>
@@ -57,20 +65,7 @@
                 </p>
             </div>
         </div>
-
-        <div id="load_home">
-            <p>klick mich für tutorial 1</p>
-        </div>
-        <div id="delete_home">
-            <p>lösche tutorial 1</p>
-        </div>
-        <div id="content">
-
-        </div>
-        <div class="nav">
-            <button id="btnTut1">Tutorial 1</button>
-            <button id="btnStart">Start</button>
-        </div>
+        
 
         <script src="lib/jquery-2.1.4.min.js"></script>
         <script src="lib/three.min.js"></script>
@@ -80,26 +75,9 @@
         <script src="lib/dat.gui.min.js"></script>
         <script src="lib/stats.min.js"></script>
 
-        <!--<script src="js/tutorial1.js"></script>-->
+        <script src="js/start.js"></script>
 
-        <script>
-        $(document).ready( function() {
-            $("#btnTut1").on("click", function() {
-                $("#content").load("tutorial1.html");
-                $.getScript("js/tutorial1.js");
-            });
-
-            $("#btnStart").on("click", function() {
-                clearContent();
-            });
-
-            
-        });
-        function clearContent(){
-            $("#content").html("");
-            $("#webgl").html("");
-        }
-        </script>
+        
 
     </body>
 </html>
