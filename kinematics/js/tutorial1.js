@@ -109,7 +109,10 @@
 
                 controls.keys = [ 65, 83, 68 ];
 
-                controls.addEventListener( 'change', render );             
+                controls.addEventListener( 'change', render );  
+
+                //add key listener
+                document.addEventListener("keydown", onDocumentKeyDown, false);            
 
                 render();
 
@@ -136,8 +139,8 @@
                 requestAnimationFrame( animate );
                 stats.update();
                 controls.update();
-                GUIcontrol.x = Math.random()*100;
-                GUIcontrol.z = Math.random()*100;
+                //GUIcontrol.x = Math.random()*100;
+                //GUIcontrol.z = Math.random()*100;
 
 
             }
@@ -213,3 +216,33 @@
                 
                 render();
             }
+
+            /** 
+      * This function is called, when a key is pushed down.
+     */ 
+    function onDocumentKeyDown(event){ 
+        // Get the key code of the pressed key 
+        var keyCode = event.which; 
+        var step = controlObject.speed;
+        
+        // Cursor up 
+        if(keyCode == 38){             
+            mesh.translateX(-step);                       
+        // Cursor down 
+        } else if(keyCode == 40){                  
+            mesh.translateX(step);            
+        // Cursor left 
+        } else if(keyCode == 37){              
+            mesh.translateZ(-step);            
+        // Cursor right 
+        } else if(keyCode == 39){              
+            mesh.translateX(step); 
+        // space 
+        } else if(keyCode == 32){
+            camera.lookAt(scene.position);
+        }
+
+        GUIcontrol.x = mesh.x;
+        GUIcontrol.z = mesh.z;
+        
+     } 
