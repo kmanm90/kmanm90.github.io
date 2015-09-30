@@ -52,13 +52,17 @@
                 scene.add( plane);
 
                 // add spotlight for the shadows
-                var spotLight = new THREE.SpotLight(0xffffff);
-                spotLight.position.set(0, 30, 0);
-                spotLight.shadowCameraNear = 20;
-                spotLight.shadowCameraFar = 50;
-                spotLight.castShadow = true;
+                //var spotLight = new THREE.SpotLight(0xffffff);
+                //spotLight.position.set(0, 30, 0);
+                //spotLight.shadowCameraNear = 20;
+                //spotLight.shadowCameraFar = 50;
+                //spotLight.castShadow = true;
+                //scene.add(spotLight);
+                light = new THREE.AmbientLight( 0xffffff );
+                light.castShadow = true;
+                scene.add( light );
 
-                scene.add(spotLight);
+                
 
 
 
