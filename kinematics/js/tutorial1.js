@@ -242,7 +242,8 @@
             camera.lookAt(scene.position);
         }
 
-        GUIcontrol.x = mesh.x;
-        GUIcontrol.z = mesh.z;
+        mesh.updateMatrix();
+        GUIcontrol.x = mesh.position.x;
+        GUIcontrol.z = mesh.position.z;
         
      } 
