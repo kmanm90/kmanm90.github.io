@@ -2,7 +2,8 @@ function showPieChart() {
     // Create the chart
     $('#piechart1').highcharts({
         chart: {
-            type: 'pie'
+            type: 'pie',
+            backgroundColor: 'transparent'
         },
         title: {
             text: 'Anzahl der weltweit produzierten Fahrzeuge. Im Verhältnis die fünf größten Hersteller (2011).'
