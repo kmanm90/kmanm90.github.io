@@ -18,8 +18,13 @@
                 scene = new THREE.Scene();
                 camera = new THREE.PerspectiveCamera( 75, (window.innerWidth/2) / (window.innerHeight/2), 1, 100 );
                 //camera = new THREE.OrthographicCamera( window.innerWidth / - 10, window.innerWidth / 10, window.innerHeight / 10, window.innerHeight / - 10, 1, 1000);
-                camera.position.set(-20,30,0);  
-                camera.lookAt(scene.position);              
+                //camera.position.set(-20,30,0);  
+                //camera.lookAt(scene.position);   
+
+                //debug kamera
+                camera.position.set(-1,30,0);  
+                camera.lookAt(scene.position); 
+
                 //camera.rotation.y = Math.PI;
                 //camera.rotation.y = Math.PI;      // Y first
                 //camera.rotation.x = 0;     // X second
@@ -118,9 +123,7 @@
                 //add key listener
                 document.addEventListener("keydown", onDocumentKeyDown, false);   
 
-                //debug kamera
-                camera.position.set(-1,30,0);  
-                camera.lookAt(scene.position);         
+                        
 
                 render();
 
@@ -171,9 +174,9 @@
             *
             */
             function addCoords(sizeCoords){                
-                var CoordsXArrow =  new THREE.ArrowHelper(new THREE.Vector3(10,1,0), new THREE.Vector3(0,1,0), sizeCoords, 0xFF0000);
-                var CoordsYArrow =  new THREE.ArrowHelper(new THREE.Vector3(0,10,0), new THREE.Vector3(0,1,0), sizeCoords, 0x00FF00);
-                var CoordsZArrow =  new THREE.ArrowHelper(new THREE.Vector3(0,1,10), new THREE.Vector3(0,1,0), sizeCoords, 0x0000FF);
+                var CoordsXArrow =  new THREE.ArrowHelper(new THREE.Vector3(10,0,0), new THREE.Vector3(0,0,0), sizeCoords, 0x000000);
+                var CoordsYArrow =  new THREE.ArrowHelper(new THREE.Vector3(0,10,0), new THREE.Vector3(0,0,0), sizeCoords, 0x000000);
+                var CoordsZArrow =  new THREE.ArrowHelper(new THREE.Vector3(0,0,10), new THREE.Vector3(0,0,0), sizeCoords, 0x000000);
 
                 scene.add(CoordsXArrow);
                 scene.add(CoordsYArrow);
